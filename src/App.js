@@ -1,24 +1,60 @@
-import logo from './logo.svg';
+import Hadder from './components/Hadder';
+import HomeCrousal from './components/HomeCrousal';
+import Homedownpage from './components/Homedownpage';
+import Shop from './components/Shop';
+import ShopD from './components/ShopD';
+import Contect from './components/Contect';
+import Cart from './components/Cart';
+import Checkout from './components/Checkout';
 import './App.css';
+import { BrowserRouter,Switch,Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>
+  <BrowserRouter>
+    <Switch>
+      <Route  exact path='/' render={props =>
+   <div>
+    <Hadder />
+    <HomeCrousal/>
+    <Homedownpage/>
+  </div>} />
+  
+  <Route  exact path='/shop' render={props =>
+   <div>
+    <Hadder />
+    <Shop/>
+  </div>} />
+
+  <Route  exact path='/shopD' render={props =>
+   <div>
+    <Hadder />
+    <ShopD/>
+  </div>} />
+
+  <Route  exact path='/Contect' render={props =>
+   <div>
+    <Hadder />
+    <Contect/>
+  </div>} />
+
+  <Route  exact path='/cart' render={props =>
+   <div>
+    <Hadder />
+    <Cart/>
+  </div>} />
+
+  <Route  exact path='/checkout' render={props =>
+   <div>
+    <Hadder />
+    <Checkout/>
+  </div>} />
+
+
+    </Switch>
+  </BrowserRouter>
+  </>
   );
 }
 
